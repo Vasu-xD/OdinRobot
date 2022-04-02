@@ -1,6 +1,5 @@
 import logging
 import os
-import re
 import sys
 import time
 from typing import List
@@ -197,12 +196,6 @@ try:
     ANTISPAM_TOGGLE = ANTISPAM_TOGGLE
 except AttributeError:
     ANTISPAM_TOGGLE = False
-
-
-uri = os.getenv("SQLALCHEMY_DATABASE_URI")  # or other relevant config var
-if uri.startswith("postgres://"):
-    uri = uri.replace("postgres://", "postgresql://", 1)
- rest of connection code using the connection string `uri
 
 # SpamWatch
 sw = KInit.init_sw()
