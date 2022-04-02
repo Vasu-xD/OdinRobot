@@ -199,10 +199,10 @@ except AttributeError:
     ANTISPAM_TOGGLE = False
 
 
-DB_URI = os.getenv("SQLALCHEMY_DATABASE_URI")  # or other relevant config var
-if DB_URI.startswith("postgres://"):
-    DB_URI = DB_URI.replace("postgres://", "postgresql://", 1)
- rest of connection code using the connection string `DB_URI
+uri = os.getenv("SQLALCHEMY_DATABASE_URI")  # or other relevant config var
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
+ rest of connection code using the connection string `uri
 
 # SpamWatch
 sw = KInit.init_sw()
